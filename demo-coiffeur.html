@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salon Éclat — Coiffure à Aulnay-sous-Bois (site de démonstration)</title>
+<meta name="description" content="Salon Éclat, salon de coiffure fictif à Aulnay-sous-Bois. Coupes, couleurs, soins. Site de démonstration.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --ink:#1f1a17; --muted:#5b524c; --bg:#fbf7f3; --card:#ffffff;
+  --accent:#8a3b4a; --accent-dark:#6e2c39; --gold:#c9a36b; --line:#eadfd5;
+  --radius:16px; --max:1100px;
+  --font: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif: "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;font-size:1rem}
+a{color:var(--accent)}
+img{max-width:100%}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:99}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:10;background:rgba(251,247,243,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-size:1.45rem;font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:.02em}
+.logo span{color:var(--accent)}
+.nav ul{display:none;list-style:none;gap:1.6rem}
+.nav ul a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem}
+.nav ul a:hover{color:var(--accent)}
+.nav .call-mini{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:#fff;text-decoration:none;padding:.5rem .9rem;border-radius:999px;font-weight:600;font-size:.9rem}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:4rem 0 4.5rem;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(201,163,107,.35), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(138,59,74,.18), transparent 50%),
+    linear-gradient(160deg,#f6ece4,#fbf7f3 60%)}
+.hero .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:1rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.3rem,8vw,4rem);line-height:1.08;margin-bottom:1.1rem}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:34rem;margin-bottom:2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;transition:transform .15s,background .15s;min-height:48px}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-ghost{border:2px solid var(--ink);color:var(--ink);background:transparent}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero-art{position:relative;aspect-ratio:4/5;max-width:380px;width:100%;justify-self:center}
+.hero-art .shape{position:absolute;border-radius:200px 200px 24px 24px;inset:0;
+  background:linear-gradient(180deg,#d9b48a 0%,#a8576a 60%,#5f2632 100%);box-shadow:0 30px 60px -20px rgba(95,38,50,.45)}
+.hero-art .shape::after{content:"";position:absolute;inset:14px;border-radius:186px 186px 14px 14px;border:1.5px solid rgba(255,255,255,.55)}
+.hero-art .badge{position:absolute;left:-10px;bottom:28px;background:#fff;border-radius:14px;padding:.8rem 1rem;box-shadow:0 10px 30px rgba(0,0,0,.12);font-size:.85rem}
+.hero-art .badge strong{display:block;font-size:1.25rem;color:var(--accent)}
+.hero-art .circle{position:absolute;right:-12px;top:30px;width:90px;height:90px;border-radius:50%;background:var(--gold);opacity:.85}
+
+/* Sections */
+section{padding:4.5rem 0}
+.section-head{margin-bottom:2.2rem}
+.section-head .eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.15;margin-top:.3rem}
+.section-head p{color:var(--muted);margin-top:.6rem;max-width:40rem}
+
+/* Services */
+#services{background:var(--card)}
+.price-groups{display:grid;gap:1.5rem}
+.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;background:var(--bg)}
+.price-card h3{font-size:1.15rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.price-card h3::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.price-card ul{list-style:none}
+.price-card li{display:flex;align-items:baseline;gap:.5rem;padding:.55rem 0;border-bottom:1px dashed var(--line)}
+.price-card li:last-child{border-bottom:0}
+.price-card li span.name{flex:0 1 auto}
+.price-card li span.dots{flex:1;border-bottom:1px dotted #cbbdb0;transform:translateY(-4px)}
+.price-card li span.price{font-weight:700;color:var(--accent-dark);white-space:nowrap}
+.price-card li small{display:block;color:var(--muted);font-size:.82rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:1.2rem}
+
+/* About */
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+.about-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-visual div{border-radius:var(--radius);aspect-ratio:1}
+.about-visual div:nth-child(1){background:linear-gradient(135deg,#c9a36b,#8a3b4a)}
+.about-visual div:nth-child(2){background:repeating-linear-gradient(45deg,#efe3d8 0 12px,#e6d5c6 12px 24px);margin-top:2rem}
+.values{list-style:none;display:grid;gap:.9rem;margin-top:1.4rem}
+.values li{display:flex;gap:.8rem;align-items:flex-start}
+.values li b{display:inline-grid;place-items:center;min-width:34px;height:34px;border-radius:50%;background:#f1e2e5;color:var(--accent-dark);font-size:.9rem}
+
+/* Hours + contact */
+#horaires{background:var(--ink);color:#f6efe9}
+#horaires .section-head .eyebrow{color:var(--gold)}
+#horaires .section-head p{color:#d6cbc2}
+.hours{list-style:none;max-width:560px}
+.hours li{display:flex;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.hours li.closed span:last-child{color:#e7a3b0}
+.hours li.today{color:var(--gold);font-weight:700}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+.tile{border-radius:var(--radius);aspect-ratio:1;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:.9rem;color:#fff;font-weight:600;font-size:.9rem}
+.tile span{background:rgba(0,0,0,.35);padding:.25rem .6rem;border-radius:999px;backdrop-filter:blur(4px)}
+.t1{background:linear-gradient(135deg,#d9a7a0,#8a3b4a)}
+.t2{background:radial-gradient(circle at 30% 30%,#f3d7a6,#b07a3e 70%)}
+.t3{background:linear-gradient(200deg,#3b2a2f,#8a5a68)}
+.t4{background:conic-gradient(from 200deg,#c9a36b,#e8cfc0,#8a3b4a,#c9a36b)}
+.t5{background:repeating-radial-gradient(circle at 70% 30%,#e8d6c8 0 10px,#d3b8a5 10px 20px)}
+.t6{background:linear-gradient(160deg,#6e2c39,#c9a36b)}
+
+/* Contact */
+#contact{background:var(--card)}
+.contact-grid{display:grid;gap:1.5rem}
+.contact-card{border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;background:var(--bg)}
+.contact-card h3{font-size:1.1rem;margin-bottom:.8rem}
+.contact-card p{margin-bottom:.5rem}
+.contact-card .big{font-size:1.5rem;font-weight:700;color:var(--accent-dark);text-decoration:none}
+.map{border-radius:var(--radius);min-height:220px;position:relative;overflow:hidden;
+  background:
+   linear-gradient(90deg,transparent 48%,#fff 48% 52%,transparent 52%),
+   linear-gradient(0deg,transparent 30%,#fff 30% 34%,transparent 34%),
+   linear-gradient(25deg,transparent 60%,#fff 60% 63%,transparent 63%),
+   #e9e1d6}
+.map .pin{position:absolute;left:50%;top:40%;width:34px;height:34px;background:var(--accent);border-radius:50% 50% 50% 0;transform:translate(-50%,-50%) rotate(-45deg);box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.map .pin::after{content:"";position:absolute;inset:10px;background:#fff;border-radius:50%}
+.map small{position:absolute;bottom:10px;left:12px;background:#fff;padding:.25rem .6rem;border-radius:8px;font-size:.78rem;color:var(--muted)}
+
+/* Footer */
+footer{background:#161211;color:#cfc4bb;padding:2.5rem 0 5.5rem;font-size:.92rem}
+footer .logo{color:#fff}
+.foot-grid{display:grid;gap:1.2rem}
+.demo-note{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem;color:#a99d93}
+.demo-note strong{color:var(--gold)}
+
+/* Mobile sticky CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;display:flex;gap:.6rem;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);z-index:20}
+.sticky-cta .btn{flex:1;padding:.75rem;font-size:.95rem}
+
+@media (min-width:720px){
+  .price-groups{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:2fr 1fr 1fr}
+}
+@media (min-width:960px){
+  .nav ul{display:flex}
+  .hero{padding:6rem 0}
+  .hero-grid{grid-template-columns:1.2fr .8fr}
+  .about-grid{grid-template-columns:1fr 1fr}
+  .price-groups{grid-template-columns:repeat(3,1fr)}
+  .hours-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .sticky-cta{display:none}
+  footer{padding-bottom:2.5rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="top">
+  <div class="container nav">
+    <a class="logo" href="#">Salon <span>Éclat</span></a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#services">Prestations</a></li>
+        <li><a href="#apropos">Le salon</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="call-mini" href="tel:+33123456789" aria-label="Appeler le salon au 01 23 45 67 89">☎ Appeler</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Coiffure · Aulnay-sous-Bois</span>
+        <h1 id="hero-title">Révélez votre <em>éclat</em>, en toute simplicité.</h1>
+        <p class="lead">Coupes femmes, hommes et enfants, colorations, balayages et soins. Une équipe à l'écoute, dans un salon chaleureux au cœur d'Aulnay-sous-Bois.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="tel:+33123456789">☎ Appeler le 01 23 45 67 89</a>
+          <a class="btn btn-ghost" href="#contact">Prendre rendez-vous</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="circle"></div>
+        <div class="shape"></div>
+        <div class="badge"><strong>4,9 ★</strong>Avis clients (exemple)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Prestations & tarifs</span>
+        <h2 id="services-title">Nos prestations</h2>
+        <p>Des tarifs clairs, sans surprise. Diagnostic offert avant chaque couleur.</p>
+      </div>
+      <div class="price-groups">
+        <div class="price-card">
+          <h3>Femmes</h3>
+          <ul>
+            <li><span class="name">Shampooing, coupe, brushing<small>Cheveux courts / mi-longs</small></span><span class="dots"></span><span class="price">42 €</span></li>
+            <li><span class="name">Coupe & brushing longs</span><span class="dots"></span><span class="price">52 €</span></li>
+            <li><span class="name">Brushing seul</span><span class="dots"></span><span class="price">25 €</span></li>
+            <li><span class="name">Chignon / coiffure de soirée</span><span class="dots"></span><span class="price">dès 45 €</span></li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3>Hommes & enfants</h3>
+          <ul>
+            <li><span class="name">Coupe homme</span><span class="dots"></span><span class="price">22 €</span></li>
+            <li><span class="name">Coupe + barbe</span><span class="dots"></span><span class="price">30 €</span></li>
+            <li><span class="name">Dégradé / contours</span><span class="dots"></span><span class="price">18 €</span></li>
+            <li><span class="name">Coupe enfant<small>Moins de 12 ans</small></span><span class="dots"></span><span class="price">15 €</span></li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3>Couleur & soins</h3>
+          <ul>
+            <li><span class="name">Coloration racines</span><span class="dots"></span><span class="price">38 €</span></li>
+            <li><span class="name">Balayage / ombré</span><span class="dots"></span><span class="price">dès 75 €</span></li>
+            <li><span class="name">Lissage brésilien</span><span class="dots"></span><span class="price">dès 120 €</span></li>
+            <li><span class="name">Soin profond kératine</span><span class="dots"></span><span class="price">20 €</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Tarifs indicatifs (exemple), TTC. Supplément possible selon la longueur et l'épaisseur des cheveux.</p>
+    </div>
+  </section>
+
+  <section id="apropos" aria-labelledby="about-title">
+    <div class="container about-grid">
+      <div class="about-visual" aria-hidden="true"><div></div><div></div></div>
+      <div>
+        <div class="section-head" style="margin-bottom:1rem">
+          <span class="eyebrow">Le salon</span>
+          <h2 id="about-title">Un salon de quartier, un savoir-faire de pro</h2>
+        </div>
+        <p>Depuis plus de dix ans, Salon Éclat accueille les habitants d'Aulnay-sous-Bois et des environs dans une ambiance détendue. Notre équipe se forme régulièrement aux dernières techniques de coupe et de couleur pour vous proposer un résultat qui vous ressemble.</p>
+        <ul class="values">
+          <li><b>1</b><span><strong>Écoute & conseil</strong> — un diagnostic personnalisé avant chaque prestation.</span></li>
+          <li><b>2</b><span><strong>Produits respectueux</strong> — colorations sans ammoniaque disponibles.</span></li>
+          <li><b>3</b><span><strong>Tous types de cheveux</strong> — lisses, ondulés, bouclés, frisés et crépus.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="horaires" aria-labelledby="hours-title">
+    <div class="container hours-wrap">
+      <div class="section-head">
+        <span class="eyebrow">Horaires</span>
+        <h2 id="hours-title">Quand nous rendre visite</h2>
+        <p>Avec ou sans rendez-vous, selon les disponibilités. Le samedi, pensez à réserver !</p>
+      </div>
+      <ul class="hours" id="hours">
+        <li data-day="1"><span>Lundi</span><span>Fermé</span></li>
+        <li data-day="2"><span>Mardi</span><span>9h30 – 19h00</span></li>
+        <li data-day="3"><span>Mercredi</span><span>9h30 – 19h00</span></li>
+        <li data-day="4"><span>Jeudi</span><span>9h30 – 20h00</span></li>
+        <li data-day="5"><span>Vendredi</span><span>9h30 – 20h00</span></li>
+        <li data-day="6"><span>Samedi</span><span>9h00 – 18h30</span></li>
+        <li data-day="0"><span>Dimanche</span><span>Fermé</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galerie" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Galerie</span>
+        <h2 id="gallery-title">Nos réalisations</h2>
+        <p>Emplacements d'images de démonstration — à remplacer par les photos du salon.</p>
+      </div>
+      <div class="gallery">
+        <div class="tile t1" role="img" aria-label="Visuel d'exemple : balayage"><span>Balayage</span></div>
+        <div class="tile t2" role="img" aria-label="Visuel d'exemple : blond doré"><span>Blond doré</span></div>
+        <div class="tile t3" role="img" aria-label="Visuel d'exemple : coupe homme"><span>Coupe homme</span></div>
+        <div class="tile t4" role="img" aria-label="Visuel d'exemple : coloration"><span>Coloration</span></div>
+        <div class="tile t5" role="img" aria-label="Visuel d'exemple : boucles"><span>Boucles</span></div>
+        <div class="tile t6" role="img" aria-label="Visuel d'exemple : chignon"><span>Chignon</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Contact & accès</span>
+        <h2 id="contact-title">Prendre rendez-vous</h2>
+        <p>Appelez-nous ou passez au salon : nous trouverons un créneau qui vous convient.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Nous joindre</h3>
+          <p><a class="big" href="tel:+33123456789">01 23 45 67 89</a></p>
+          <p>E-mail : <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></p>
+          <p><strong>Adresse :</strong><br>12 rue de l'Exemple<br>93600 Aulnay-sous-Bois</p>
+          <p style="font-size:.85rem;color:var(--muted)">Coordonnées fictives, à titre de démonstration.</p>
+          <div class="btns" style="margin-top:1rem">
+            <a class="btn btn-primary" href="tel:+33123456789">☎ Appeler</a>
+          </div>
+        </div>
+        <div class="map" role="img" aria-label="Plan d'accès illustratif">
+          <div class="pin"></div>
+          <small>Plan illustratif — RER B, gare d'Aulnay-sous-Bois à proximité</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#">Salon <span style="color:var(--gold)">Éclat</span></a>
+        <p style="margin-top:.5rem">Coiffure mixte à Aulnay-sous-Bois.</p>
+      </div>
+      <div><strong style="color:#fff">Contact</strong><br>01 23 45 67 89<br>12 rue de l'Exemple, 93600</div>
+      <div><strong style="color:#fff">Horaires</strong><br>Mar – Sam<br>Fermé dim. & lun.</div>
+    </div>
+    <p class="demo-note"><strong>Site de démonstration</strong> — Salon Éclat est un salon fictif. Nom, adresse, téléphone, tarifs et avis sont des exemples sans valeur réelle. © <span id="y">2026</span></p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-primary" href="tel:+33123456789">☎ Appeler</a>
+  <a class="btn btn-ghost" href="#contact">Rendez-vous</a>
+</div>
+
+<script>
+  var d=new Date().getDay(),el=document.querySelector('#hours li[data-day="'+d+'"]');
+  if(el){el.classList.add('today');el.firstElementChild.textContent+=' (aujourd\u2019hui)';}
+  document.getElementById('y').textContent=new Date().getFullYear();
+  document.querySelectorAll('#hours li').forEach(function(li){if(/Fermé/.test(li.textContent))li.classList.add('closed');});
+</script>
+</body>
+</html>
