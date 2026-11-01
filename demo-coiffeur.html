@@ -116,7 +116,7 @@ section{padding:4.5rem 0}
 .contact-card{border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;background:var(--bg)}
 .contact-card h3{font-size:1.1rem;margin-bottom:.8rem}
 .contact-card p{margin-bottom:.5rem}
-.contact-card .big{font-size:1.5rem;font-weight:700;color:var(--accent-dark);text-decoration:none}
+.contact-card .big{font-size:clamp(1.1rem,5.2vw,1.5rem);font-weight:700;color:var(--accent-dark);text-decoration:none;overflow-wrap:anywhere}
 .map{border-radius:var(--radius);min-height:220px;position:relative;overflow:hidden;
   background:
    linear-gradient(90deg,transparent 48%,#fff 48% 52%,transparent 52%),
@@ -172,7 +172,7 @@ footer .logo{color:#fff}
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="call-mini" href="tel:+33123456789" aria-label="Appeler le salon au 01 23 45 67 89">☎ Appeler</a>
+    <a class="call-mini" href="mailto:contact@exemple.fr" aria-label="Écrire un e-mail au salon : contact@exemple.fr">✉ E-mail</a>
   </div>
 </header>
 
@@ -184,7 +184,7 @@ footer .logo{color:#fff}
         <h1 id="hero-title">Révélez votre <em>éclat</em>, en toute simplicité.</h1>
         <p class="lead">Coupes femmes, hommes et enfants, colorations, balayages et soins. Une équipe à l'écoute, dans un salon chaleureux au cœur d'Aulnay-sous-Bois.</p>
         <div class="btns">
-          <a class="btn btn-primary" href="tel:+33123456789">☎ Appeler le 01 23 45 67 89</a>
+          <a class="btn btn-primary" href="mailto:contact@exemple.fr">✉ Écrire au salon</a>
           <a class="btn btn-ghost" href="#contact">Prendre rendez-vous</a>
         </div>
       </div>
@@ -296,17 +296,16 @@ footer .logo{color:#fff}
       <div class="section-head">
         <span class="eyebrow">Contact & accès</span>
         <h2 id="contact-title">Prendre rendez-vous</h2>
-        <p>Appelez-nous ou passez au salon : nous trouverons un créneau qui vous convient.</p>
+        <p>Écrivez-nous ou passez au salon : nous trouverons un créneau qui vous convient.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Nous joindre</h3>
-          <p><a class="big" href="tel:+33123456789">01 23 45 67 89</a></p>
-          <p>E-mail : <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></p>
+          <p><a class="big" href="mailto:contact@exemple.fr">contact@exemple.fr</a></p>
           <p><strong>Adresse :</strong><br>12 rue de l'Exemple<br>93600 Aulnay-sous-Bois</p>
           <p style="font-size:.85rem;color:var(--muted)">Coordonnées fictives, à titre de démonstration.</p>
           <div class="btns" style="margin-top:1rem">
-            <a class="btn btn-primary" href="tel:+33123456789">☎ Appeler</a>
+            <a class="btn btn-primary" href="mailto:contact@exemple.fr">✉ Écrire un e-mail</a>
           </div>
         </div>
         <div class="map" role="img" aria-label="Plan d'accès illustratif">
@@ -325,15 +324,15 @@ footer .logo{color:#fff}
         <a class="logo" href="#">Salon <span style="color:var(--gold)">Éclat</span></a>
         <p style="margin-top:.5rem">Coiffure mixte à Aulnay-sous-Bois.</p>
       </div>
-      <div><strong style="color:#fff">Contact</strong><br>01 23 45 67 89<br>12 rue de l'Exemple, 93600</div>
+      <div><strong style="color:#fff">Contact</strong><br><a href="mailto:contact@exemple.fr" style="color:var(--gold)">contact@exemple.fr</a><br>12 rue de l'Exemple, 93600</div>
       <div><strong style="color:#fff">Horaires</strong><br>Mar – Sam<br>Fermé dim. & lun.</div>
     </div>
-    <p class="demo-note"><strong>Site de démonstration</strong> — Salon Éclat est un salon fictif. Nom, adresse, téléphone, tarifs et avis sont des exemples sans valeur réelle. © <span id="y">2026</span></p>
+    <p class="demo-note"><strong>Site de démonstration</strong> — Salon Éclat est un salon fictif. Nom, adresse, e-mail, tarifs et avis sont des exemples sans valeur réelle. © <span id="y">2026</span></p>
   </div>
 </footer>
 
 <div class="sticky-cta">
-  <a class="btn btn-primary" href="tel:+33123456789">☎ Appeler</a>
+  <a class="btn btn-primary" href="mailto:contact@exemple.fr">✉ E-mail</a>
   <a class="btn btn-ghost" href="#contact">Rendez-vous</a>
 </div>
 

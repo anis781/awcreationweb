@@ -143,26 +143,14 @@ section{padding:4.25rem 0}
 
 /* Contact */
 #contact{background:var(--card)}
-.contact-grid{display:grid;gap:1.5rem}
+.contact-grid{display:grid;gap:1.5rem;max-width:640px}
 .call-panel{background:linear-gradient(160deg,var(--navy-2),var(--navy));color:#fff;border-radius:16px;padding:1.6rem}
 .call-panel h3{font-size:1.3rem;margin-bottom:.5rem}
 .call-panel p{color:#d3e0ee;margin-bottom:1rem}
-.call-panel .big{display:block;font-size:2rem;font-weight:800;color:var(--yellow);text-decoration:none;margin:.3rem 0 1rem;letter-spacing:.02em}
+.call-panel .big{display:block;font-size:clamp(1.25rem,5.5vw,1.7rem);font-weight:800;color:var(--yellow);text-decoration:none;margin:.3rem 0 1rem;letter-spacing:.01em;overflow-wrap:anywhere}
 .call-panel ul{list-style:none;display:grid;gap:.45rem;margin-top:1.2rem;font-size:.95rem;color:#e7eef6}
 .call-panel a{color:#ffe08a}
 .call-panel a.btn{color:var(--ink)}
-.form-card{border:1px solid var(--line);border-radius:16px;padding:1.6rem;background:var(--bg)}
-.form-card h3{font-size:1.3rem;margin-bottom:.3rem}
-form{display:grid;gap:1rem;margin-top:1rem}
-.row{display:grid;gap:1rem}
-label{display:block;font-weight:700;font-size:.92rem;margin-bottom:.3rem}
-label .opt{font-weight:400;color:var(--muted)}
-input,select,textarea{width:100%;font:inherit;padding:.75rem .85rem;border:2px solid #b7c6d6;border-radius:10px;background:#fff;color:var(--ink);min-height:48px}
-textarea{min-height:110px;resize:vertical}
-input:focus-visible,select:focus-visible,textarea:focus-visible{border-color:var(--blue);outline:3px solid var(--yellow);outline-offset:1px}
-.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;font-weight:400}
-.check input{width:22px;min-height:22px;height:22px;margin-top:.15rem;flex:none}
-.form-msg{font-weight:700;color:var(--green)}
 .small-muted{font-size:.85rem;color:var(--muted)}
 
 /* Footer */
@@ -173,7 +161,7 @@ body>footer a{color:#ffe08a}
 .demo-note{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#9fb3c9}
 .demo-note strong{color:var(--yellow)}
 
-/* Sticky call bar */
+/* Sticky CTA bar */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;display:flex;gap:.6rem;padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));background:var(--navy);z-index:20;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
 .sticky-cta .btn{padding:.7rem;font-size:1rem;min-height:52px}
 .sticky-cta .btn-call{flex:2}
@@ -181,7 +169,6 @@ body>footer a{color:#ffe08a}
 
 @media (min-width:600px){
   .services{grid-template-columns:repeat(2,1fr)}
-  .row{grid-template-columns:1fr 1fr}
   .call-mini .num{display:inline}
   .call-mini .lbl{display:none}
   .btn-big{width:auto}
@@ -198,7 +185,6 @@ body>footer a{color:#ffe08a}
   .hero-grid{grid-template-columns:1.2fr .8fr}
   .services{grid-template-columns:repeat(3,1fr)}
   .zone-grid{grid-template-columns:1.1fr .9fr}
-  .contact-grid{grid-template-columns:.85fr 1.15fr}
   .sticky-cta{display:none}
   body>footer{padding-bottom:2.5rem}
 }
@@ -209,7 +195,7 @@ body>footer a{color:#ffe08a}
 <a class="skip" href="#main">Aller au contenu</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-euro" viewBox="0 0 24 24"><path d="M4 10h12M4 14h9M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></symbol>
@@ -220,10 +206,9 @@ body>footer a{color:#ffe08a}
   <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
   <symbol id="i-bath" viewBox="0 0 24 24"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-2.1 0L4 4a1.5 1.5 0 0 0 0 2.1V20M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5zM7 20v2M17 20v2"/></symbol>
   <symbol id="i-pipe" viewBox="0 0 24 24"><path d="M3 9h11a3 3 0 0 1 3 3v9M3 15h8a0 0 0 0 1 0 0v6M3 6v12M14 21h6"/></symbol>
-  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
 </svg>
 
-<div class="strip" role="note"><span class="dot" aria-hidden="true"></span>Intervention rapide 7j/7<span class="long"> à Aulnay-sous-Bois et alentours</span> — devis gratuit</div>
+<div class="strip" role="note"><span class="dot" aria-hidden="true"></span>Intervention rapide 7j/7<span class="long"> à Aulnay-sous-Bois et alentours</span></div>
 
 <header class="top">
   <div class="container nav">
@@ -234,10 +219,10 @@ body>footer a{color:#ffe08a}
         <li><a href="#etapes">Comment ça marche</a></li>
         <li><a href="#zone">Zone</a></li>
         <li><a href="#avis">Avis</a></li>
-        <li><a href="#contact">Devis</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="call-mini" href="tel:+33123456789" aria-label="Appeler maintenant le 01 23 45 67 89"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="lbl">Appeler</span><span class="num">01 23 45 67 89</span></a>
+    <a class="call-mini" href="mailto:contact@exemple.fr" aria-label="Écrire un e-mail à contact@exemple.fr"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span class="lbl">E-mail</span><span class="num">contact@exemple.fr</span></a>
   </div>
 </header>
 
@@ -249,17 +234,17 @@ body>footer a{color:#ffe08a}
         <h1 id="hero-title">Fuite, WC bouché, plus d'eau chaude&nbsp;? <span>On arrive vite.</span></h1>
         <p class="lead">Plombier dépanneur à Aulnay-sous-Bois et dans les communes voisines. Diagnostic clair, prix annoncé avant travaux, intervention soignée — même le week-end.</p>
         <div class="btns">
-          <a class="btn btn-call btn-big" href="tel:+33123456789" aria-label="Appeler maintenant le 01 23 45 67 89">
-            <svg class="ico" aria-hidden="true" style="width:1.6em;height:1.6em"><use href="#i-phone"/></svg>
-            <span class="txt">Appeler maintenant<small>01 23 45 67 89</small></span>
+          <a class="btn btn-call btn-big" href="mailto:contact@exemple.fr" aria-label="Écrire un e-mail à contact@exemple.fr">
+            <svg class="ico" aria-hidden="true" style="width:1.6em;height:1.6em"><use href="#i-mail"/></svg>
+            <span class="txt">Écrire un e-mail<small>contact@exemple.fr</small></span>
           </a>
-          <a class="btn btn-light" href="#contact">Demander un devis</a>
+          <a class="btn btn-light" href="#contact">Nous contacter</a>
         </div>
         <ul class="trust" aria-label="Nos engagements">
           <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Sur place en ~45 min*</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-euro"/></svg>Prix annoncé avant travaux</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Travaux garantis</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Devis gratuit</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Déplacement offert à Aulnay-sous-Bois</li>
         </ul>
       </div>
       <div class="hero-art" aria-hidden="true">
@@ -326,12 +311,12 @@ body>footer a{color:#ffe08a}
         <p>Pas de mauvaise surprise : vous savez ce qui va être fait, et combien ça coûte.</p>
       </div>
       <ol class="steps">
-        <li><h3>Vous appelez</h3><p>Décrivez le problème au téléphone. On vous donne une fourchette de prix et un créneau d'arrivée.</p></li>
+        <li><h3>Vous nous écrivez</h3><p>Décrivez le problème par e-mail. On vous donne une fourchette de prix et un créneau d'arrivée.</p></li>
         <li><h3>On diagnostique</h3><p>Sur place, le technicien identifie la panne et vous annonce le prix exact avant toute intervention.</p></li>
         <li><h3>On répare</h3><p>Réparation propre et testée, facture détaillée remise sur place. Paiement CB, espèces ou chèque.</p></li>
       </ol>
       <div class="btns" style="margin-top:2rem">
-        <a class="btn btn-navy" href="tel:+33123456789"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Appeler maintenant</a>
+        <a class="btn btn-navy" href="mailto:contact@exemple.fr"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Écrire un e-mail</a>
       </div>
     </div>
   </section>
@@ -349,7 +334,7 @@ body>footer a{color:#ffe08a}
           <li>Sevran</li><li>Villepinte</li><li>Blanc-Mesnil</li><li>Bondy</li>
           <li>Livry-Gargan</li><li>Les Pavillons-sous-Bois</li><li>Drancy</li><li>Gonesse</li><li>Tremblay-en-France</li>
         </ul>
-        <p class="small-muted" style="color:#bfd0e3;margin-top:1.2rem">Votre commune n'est pas listée&nbsp;? Appelez-nous, on trouvera une solution.</p>
+        <p class="small-muted" style="color:#bfd0e3;margin-top:1.2rem">Votre commune n'est pas listée&nbsp;? Écrivez-nous, on trouvera une solution.</p>
       </div>
       <div class="radar" role="img" aria-label="Schéma illustratif de la zone d'intervention autour d'Aulnay-sous-Bois">
         <span class="center"></span>
@@ -374,7 +359,7 @@ body>footer a{color:#ffe08a}
       <div class="reviews">
         <figure class="review">
           <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
-          <blockquote><p>« Fuite sous l'évier un dimanche matin, le plombier est arrivé en moins d'une heure. Prix annoncé au téléphone respecté. »</p></blockquote>
+          <blockquote><p>« Fuite sous l'évier un dimanche matin, le plombier est arrivé en moins d'une heure. Prix annoncé respecté. »</p></blockquote>
           <figcaption><footer><span class="av" aria-hidden="true">S</span><span><strong style="color:var(--ink)">Sophie M.</strong> · Aulnay-sous-Bois (exemple)</span></footer></figcaption>
         </figure>
         <figure class="review">
@@ -394,41 +379,21 @@ body>footer a{color:#ffe08a}
   <section id="contact" aria-labelledby="contact-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Contact & devis</span>
+        <span class="eyebrow">Contact</span>
         <h2 id="contact-title">Une urgence&nbsp;? Un projet&nbsp;?</h2>
-        <p>Pour une urgence, appelez directement. Pour un devis, décrivez votre besoin : réponse sous 24 h (exemple).</p>
+        <p>Pour une urgence comme pour un projet, écrivez-nous en décrivant votre besoin : réponse sous 24 h (exemple).</p>
       </div>
       <div class="contact-grid">
         <div class="call-panel">
           <h3>Urgence plomberie</h3>
-          <p>Le plus rapide : un appel. Un technicien vous répond 7j/7.</p>
-          <a class="big" href="tel:+33123456789">01 23 45 67 89</a>
-          <a class="btn btn-call" href="tel:+33123456789" style="width:100%"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Appeler maintenant</a>
+          <p>Écrivez-nous par e-mail, 7j/7.</p>
+          <a class="big" href="mailto:contact@exemple.fr">contact@exemple.fr</a>
+          <a class="btn btn-call" href="mailto:contact@exemple.fr" style="width:100%"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Écrire un e-mail</a>
           <ul>
-            <li>E-mail : <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></li>
             <li>Adresse : 12 rue de l'Exemple, 93600 Aulnay-sous-Bois</li>
             <li>Disponibilité : 7j/7, 8h – 22h (exemple)</li>
           </ul>
           <p class="small-muted" style="color:#9fb3c9;margin:1rem 0 0">Coordonnées fictives, à titre de démonstration.</p>
-        </div>
-        <div class="form-card">
-          <h3>Demande de devis gratuit</h3>
-          <p class="small-muted" id="devis-help">Formulaire de démonstration : aucune donnée n'est envoyée.</p>
-          <form id="devis" novalidate aria-describedby="devis-help">
-            <div class="row">
-              <div><label for="d-name">Nom</label><input id="d-name" name="name" autocomplete="name" required aria-required="true"></div>
-              <div><label for="d-tel">Téléphone</label><input id="d-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true"></div>
-            </div>
-            <div class="row">
-              <div><label for="d-type">Type d'intervention</label>
-                <select id="d-type" name="type"><option>Fuite d'eau</option><option>Débouchage</option><option>Chauffe-eau</option><option>Robinetterie</option><option>Salle de bain</option><option>Électricité</option><option>Autre</option></select></div>
-              <div><label for="d-city">Commune</label><input id="d-city" name="city" value="Aulnay-sous-Bois" autocomplete="address-level2"></div>
-            </div>
-            <div><label for="d-msg">Votre besoin <span class="opt">(facultatif)</span></label><textarea id="d-msg" name="msg" placeholder="Ex. : fuite au niveau du raccord sous l'évier depuis ce matin"></textarea></div>
-            <label class="check"><input type="checkbox" id="d-urg" name="urgent"><span>C'est urgent, rappelez-moi dès que possible</span></label>
-            <button class="btn btn-navy" type="submit">Envoyer ma demande</button>
-            <p class="form-msg" id="devis-msg" role="status" aria-live="polite"></p>
-          </form>
         </div>
       </div>
     </div>
@@ -442,27 +407,21 @@ body>footer a{color:#ffe08a}
         <a class="logo" href="#main"><span class="mark" aria-hidden="true"></span><span><b>Dupont Dépannage</b><small>Plomberie · 93</small></span></a>
         <p style="margin-top:.7rem">Plombier dépanneur à Aulnay-sous-Bois et alentours. Intervention rapide 7j/7.</p>
       </div>
-      <div><strong>Contact</strong><br><a href="tel:+33123456789">01 23 45 67 89</a><br><a href="mailto:contact@exemple.fr">contact@exemple.fr</a><br>12 rue de l'Exemple<br>93600 Aulnay-sous-Bois</div>
+      <div><strong>Contact</strong><br><a href="mailto:contact@exemple.fr">contact@exemple.fr</a><br>12 rue de l'Exemple<br>93600 Aulnay-sous-Bois</div>
       <div><strong>Services</strong><br>Fuites & débouchage<br>Chauffe-eau<br>Sanitaires<br>Petite électricité</div>
     </div>
-    <p class="demo-note"><strong>Site de démonstration</strong> — Dupont Dépannage Plomberie est une entreprise fictive. Nom, adresse, téléphone, tarifs et avis sont des exemples sans valeur réelle. *Délai indicatif. © <span id="y">2026</span></p>
+    <p class="demo-note"><strong>Site de démonstration</strong> — Dupont Dépannage Plomberie est une entreprise fictive. Nom, adresse, e-mail, tarifs et avis sont des exemples sans valeur réelle. *Délai indicatif. © <span id="y">2026</span></p>
   </div>
 </footer>
 
 <div class="sticky-cta" role="region" aria-label="Actions rapides">
-  <a class="btn btn-call" href="tel:+33123456789" aria-label="Appeler maintenant le 01 23 45 67 89"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Appeler maintenant</a>
-  <a class="btn btn-light" href="#contact">Devis</a>
+  <a class="btn btn-call" href="mailto:contact@exemple.fr" aria-label="Écrire un e-mail à contact@exemple.fr"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Écrire un e-mail</a>
+  <a class="btn btn-light" href="#contact">Contact</a>
 </div>
 
 <script>
 (function(){
   document.getElementById('y').textContent=new Date().getFullYear();
-  document.getElementById('devis').addEventListener('submit',function(e){
-    e.preventDefault();
-    var n=document.getElementById('d-name').value.trim(), t=document.getElementById('d-tel').value.trim(), m=document.getElementById('devis-msg');
-    if(!n||!t){ m.style.color='#a32b1f'; m.textContent='Merci d\u2019indiquer votre nom et votre téléphone.'; (n?document.getElementById('d-tel'):document.getElementById('d-name')).focus(); return; }
-    m.style.color=''; m.textContent='Merci '+n+' ! Démonstration : aucune demande n\u2019a été envoyée.';
-  });
 })();
 </script>
 </body>
