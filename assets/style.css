@@ -80,6 +80,10 @@ section.tight{padding-top:clamp(1.5rem,4vw,3rem)}
 .lead{font-size:clamp(1.12rem,2.2vw,1.3rem);color:var(--fg);max-width:52ch;margin:0}
 .hero-foot .actions{margin-top:0}
 .hero-art{margin:3rem auto 0;max-width:760px;width:100%}
+.hero-photo{margin:2.5rem 0 0}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:50% 20%;border-radius:var(--radius);background:var(--soft)}
+@media (max-width:600px){.hero-photo img{aspect-ratio:3/2}}
+.credits li{margin-bottom:.6rem}
 /* Listes (style Épure) */
 .feat-list,.off-list{list-style:none;padding:0;margin:0}
 @media (min-width:640px){.feat-list{display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem}}
