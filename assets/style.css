@@ -4,15 +4,15 @@
    (voir README.md). Une seule couleur d'accent.
    ========================================================= */
 :root{
-  --bg:#faf6f0;          /* fond de page (clair, chaud) */
-  --surface:#fffdf9;     /* panneaux, champs */
-  --soft:#f3eadf;        /* zones légèrement teintées */
-  --fg:#2e2119;          /* texte principal */
-  --muted:#5e4a3c;       /* texte secondaire (AA sur --bg et --soft) */
-  --line:#e4d6c5;        /* filets */
-  --line-strong:#8c7260; /* bordures de champs (≥3:1) */
-  --accent:#9c4221;      /* L'UNIQUE couleur d'accent (boutons, liens, focus) */
-  --accent-hover:#7f3418;/* accent foncé au survol */
+  --bg:#fbf8f1;          /* fond de page (clair, chaud) */
+  --surface:#fffefb;     /* panneaux, champs */
+  --soft:#ece8da;        /* zones légèrement teintées */
+  --fg:#242820;          /* texte principal */
+  --muted:#4b5144;       /* texte secondaire (AA sur --bg et --soft) */
+  --line:#dedbc9;        /* filets */
+  --line-strong:#7b8070; /* bordures de champs (≥3:1) */
+  --accent:#2b6a4b;      /* L'UNIQUE couleur d'accent (boutons, liens, focus) */
+  --accent-hover:#1e5039;/* accent foncé au survol */
   --accent-fg:#ffffff;   /* texte posé sur l'accent */
   --todo-bg:#fff0b3;     /* surlignage des [à compléter] */
   --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
