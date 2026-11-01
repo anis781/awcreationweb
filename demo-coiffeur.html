@@ -46,9 +46,8 @@ header.top{position:sticky;top:0;z-index:10;background:rgba(251,247,243,.94);bac
 .hero p{color:var(--muted);margin-bottom:1.8rem;max-width:26rem}
 .arch{position:relative;aspect-ratio:4/5;max-width:360px;width:100%;justify-self:center}
 .arch .shape{position:absolute;inset:0;border-radius:200px 200px 24px 24px;background:linear-gradient(180deg,#d9b48a 0%,#a8576a 60%,#5f2632 100%);box-shadow:0 30px 60px -20px rgba(95,38,50,.45)}
-.arch .shape::after{content:"";position:absolute;inset:14px;border-radius:186px 186px 14px 14px;border:1.5px solid rgba(255,255,255,.55)}
+.arch img.shape{display:block;width:100%;height:100%;object-fit:cover}
 .arch .circle{position:absolute;right:-12px;top:30px;width:84px;height:84px;border-radius:50%;background:var(--gold);opacity:.85}
-.arch .tag{position:absolute;left:-8px;bottom:26px;background:#fff;border-radius:12px;padding:.6rem .9rem;box-shadow:0 10px 30px rgba(0,0,0,.12);font-size:.85rem;font-family:var(--serif);font-style:italic}
 
 section{padding:4rem 0}
 h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15;margin-bottom:.8rem}
@@ -56,7 +55,10 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,5vw,2.6rem);l
 /* Univers : mosaïque asymétrique */
 .mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 .tile{border-radius:18px;min-height:150px;position:relative;display:flex;align-items:flex-end;padding:.8rem;color:#fff;font-size:.88rem}
-.tile span{background:rgba(0,0,0,.32);padding:.2rem .6rem;border-radius:999px}
+.tile{overflow:hidden;margin:0}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile figcaption{position:relative;z-index:1}
+.tile span{background:rgba(0,0,0,.55);padding:.2rem .7rem;border-radius:999px}
 .tile.big{grid-column:span 2;min-height:240px;background:linear-gradient(135deg,#d9a7a0,#8a3b4a)}
 .t2{background:radial-gradient(circle at 30% 30%,#f3d7a6,#b07a3e 70%)}
 .t3{background:linear-gradient(200deg,#3b2a2f,#8a5a68)}
@@ -138,10 +140,9 @@ footer strong{color:var(--gold)}
         <p><span class="ph">[Texte d'exemple]</span> Une ligne sur l'esprit du salon.</p>
         <a class="btn btn-primary" href="#contact">Prendre rendez-vous (exemple)</a>
       </div>
-      <div class="arch" aria-hidden="true">
-        <div class="circle"></div>
-        <div class="shape"></div>
-        <div class="tag">Photo du salon à venir</div>
+      <div class="arch">
+        <div class="circle" aria-hidden="true"></div>
+        <img class="shape" src="assets/photos/coiffure-salon.jpg" width="960" height="1200" loading="lazy" decoding="async" alt="Salon de coiffure lumineux et vide : fauteuils, grands miroirs et lustre en cristal">
       </div>
     </div>
   </section>
@@ -150,12 +151,12 @@ footer strong{color:var(--gold)}
     <div class="container">
       <h2 id="univers-title">L'univers</h2>
       <div class="mosaic">
-        <div class="tile big" role="img" aria-label="Emplacement photo : couleur"><span>Couleur</span></div>
-        <div class="tile t2" role="img" aria-label="Emplacement photo : blond"><span>Blond</span></div>
-        <div class="tile t3" role="img" aria-label="Emplacement photo : coupe"><span>Coupe</span></div>
-        <div class="tile t4" role="img" aria-label="Emplacement photo : boucles"><span>Boucles</span></div>
+        <figure class="tile big"><img src="assets/photos/coiffure-pinceaux-couleur.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Pinceaux de coloration, peignes et ciseaux noirs posés sur un fond blanc"><figcaption><span>Couleur</span></figcaption></figure>
+        <figure class="tile t2"><img src="assets/photos/coiffure-cheveux-blonds.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Mains tenant un peigne et des ciseaux au-dessus d'une mèche de cheveux blonds"><figcaption><span>Blond</span></figcaption></figure>
+        <figure class="tile t3"><img src="assets/photos/coiffure-ciseaux.jpg" width="900" height="600" loading="lazy" decoding="async" alt="Plusieurs paires de ciseaux de coiffure alignées sur une serviette grise"><figcaption><span>Coupe</span></figcaption></figure>
+        <figure class="tile t4"><img src="assets/photos/coiffure-fer-a-boucler.jpg" width="1200" height="600" loading="lazy" decoding="async" alt="Fer à boucler et brosse ronde posés sur une serviette rose"><figcaption><span>Boucles</span></figcaption></figure>
       </div>
-      <p class="caption">Emplacements d'images : les photos du salon prendront leur place.</p>
+      <p class="caption">Photos d'illustration issues de Pexels : le salon les remplacera par les siennes.</p>
     </div>
   </section>
 
@@ -191,7 +192,7 @@ footer strong{color:var(--gold)}
 
 <footer>
   <div class="container">
-    <p><strong>Site de démonstration</strong> — Salon Éclat est un salon fictif. Textes et visuels sont des exemples. © <span id="y">2026</span></p>
+    <p><strong>Site de démonstration</strong> — Salon Éclat est un salon fictif. Textes et visuels sont des exemples ; photos d'illustration issues de Pexels (crédits dans les <a href="mentions-legales.html#credits-photos" style="color:var(--gold)">mentions légales</a>). © <span id="y">2026</span></p>
   </div>
 </footer>
 

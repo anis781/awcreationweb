@@ -41,7 +41,7 @@ header.top{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;bo
 .btn-y:hover{background:var(--yellow-dark)}
 .btn-sm{padding:.5rem .85rem;min-height:44px;font-size:.92rem}
 
-/* Hero : court, une seule colonne + schéma tuyau */
+/* Hero : court, texte + photo */
 .hero{position:relative;overflow:hidden;color:#fff;padding:2.6rem 0 2.8rem;background:linear-gradient(160deg,var(--navy-2),var(--navy) 60%,#0a1f36)}
 .hero::before{content:"";position:absolute;inset:0;opacity:.07;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:36px 36px}
 .hero .container{position:relative;display:grid;gap:2rem;align-items:center}
@@ -52,13 +52,6 @@ header.top{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff;bo
 .facts{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin-top:1.4rem;font-size:.92rem;color:#e7eef6}
 .facts span{display:inline-flex;align-items:center;gap:.4rem}
 .facts .ico{color:var(--yellow)}
-.pipe{position:relative;width:min(300px,70vw);height:170px;justify-self:center}
-.pipe .h{position:absolute;left:0;right:0;top:80px;height:30px;border-radius:7px;background:linear-gradient(180deg,#d7dee6,#9aa8b6 60%,#7d8b99)}
-.pipe .v{position:absolute;left:60%;top:0;width:30px;height:100px;border-radius:7px;background:linear-gradient(90deg,#d7dee6,#9aa8b6 60%,#7d8b99)}
-.pipe .j{position:absolute;left:calc(60% - 8px);top:72px;width:46px;height:46px;border-radius:9px;background:linear-gradient(135deg,#ffd75e,#e6ad00)}
-.pipe .vl{position:absolute;left:18%;top:56px;width:22px;height:24px;background:#c73a2c;border-radius:5px 5px 0 0}
-.pipe .vl::before{content:"";position:absolute;left:-13px;top:-8px;width:48px;height:9px;border-radius:5px;background:#e14b3b}
-.pipe .d{position:absolute;left:28%;top:128px;width:20px;height:20px;background:#5fb0ff;border-radius:0 50% 50% 50%;transform:rotate(45deg)}
 
 section{padding:2.8rem 0}
 h2{font-size:clamp(1.45rem,4.5vw,2rem);line-height:1.15;font-weight:800;margin-bottom:.4rem}
@@ -79,7 +72,8 @@ h2{font-size:clamp(1.45rem,4.5vw,2rem);line-height:1.15;font-weight:800;margin-b
 .sect{display:grid;gap:1.6rem;align-items:center}
 .radar{position:relative;width:min(220px,60vw);aspect-ratio:1;justify-self:center;border-radius:50%;
   background:radial-gradient(circle,transparent 0 30%,rgba(255,255,255,.18) 30.5% 31%,transparent 31.5% 62%,rgba(255,255,255,.16) 62.5% 63%,transparent 63.5%),radial-gradient(circle,#1b4877,#0f2c4c 70%)}
-.radar .c{position:absolute;left:50%;top:50%;width:16px;height:16px;border-radius:50%;background:var(--yellow);transform:translate(-50%,-50%);box-shadow:0 0 0 8px rgba(255,201,40,.25)}
+.radar{display:block;height:auto;object-fit:cover;border:6px solid rgba(255,255,255,.14);box-shadow:0 0 0 2px var(--yellow)}
+.hero-img{display:block;width:100%;max-width:440px;height:auto;aspect-ratio:5/4;object-fit:cover;justify-self:center;border-radius:12px;border:3px solid var(--yellow);box-shadow:0 18px 40px rgba(0,0,0,.35)}
 
 /* Autres travaux : simple liste en ligne */
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none}
@@ -156,7 +150,7 @@ body>footer strong{color:var(--yellow)}
         <a class="btn btn-y" href="#contact"><svg class="ico" aria-hidden="true"><use href="#i-msg"/></svg>Contact (exemple)</a>
         <p class="facts"><span><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Horaires à indiquer</span><span><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Zone d'intervention à indiquer</span></p>
       </div>
-      <div class="pipe" aria-hidden="true"><div class="v"></div><div class="h"></div><div class="j"></div><div class="vl"></div><div class="d"></div></div>
+      <img class="hero-img" src="assets/photos/plomberie-raccord-tuyau.jpg" width="1000" height="800" loading="lazy" decoding="async" alt="Mains gantées serrant un raccord en laiton sur un tuyau métallique, sous un plafond isolé">
     </div>
   </section>
 
@@ -180,7 +174,7 @@ body>footer strong{color:var(--yellow)}
         <p class="sub" style="margin-bottom:.6rem">Basé à <span class="ph">Adresse de l'entreprise</span>.</p>
         <p class="sub" style="margin-bottom:0">Communes desservies : <span class="ph">à indiquer</span></p>
       </div>
-      <div class="radar" role="img" aria-label="Schéma illustratif d'une zone d'intervention"><span class="c"></span></div>
+      <img class="radar" src="assets/photos/plomberie-robinet.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Robinet chromé raccordé à un tuyau bleu, sur un mur clair">
     </div>
   </section>
 
@@ -212,7 +206,7 @@ body>footer strong{color:var(--yellow)}
 
 <footer>
   <div class="container">
-    <p><strong>Site de démonstration.</strong> Dupont Dépannage Plomberie est une entreprise fictive. Les textes sont des exemples à remplacer. © <span id="y">2026</span></p>
+    <p><strong>Site de démonstration.</strong> Dupont Dépannage Plomberie est une entreprise fictive. Les textes sont des exemples à remplacer. Photos d'illustration issues de Pexels (crédits dans les <a href="mentions-legales.html#credits-photos" style="color:#ffe08a">mentions légales</a>). © <span id="y">2026</span></p>
   </div>
 </footer>
 
